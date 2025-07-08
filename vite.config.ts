@@ -15,8 +15,9 @@ export default defineConfig(({ mode }) => {
       },
     },
     server: {
-      host: true, // ✅ Listen on 0.0.0.0 for Render
-      port: parseInt(process.env.PORT) || 5173, // ✅ Use Render's assigned port or default
+      host: '0.0.0.0',
+      port: parseInt(process.env.PORT) || 5173,
+      allowedHosts: ['buzz-card-2.onrender.com'], // ✅ Add your Render domain here
     },
   };
 });
