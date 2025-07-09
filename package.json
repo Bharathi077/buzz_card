@@ -7,7 +7,7 @@
   "dev": "vite",
   "build": "vite build",
   "preview": "vite preview",
-  "start": "VITE_PREVIEW_HOST_CHECK=false vite preview --host --port $PORT"
+  "start": "NODE_OPTIONS=--no-warnings vite preview --host 0.0.0.0 --port $PORT --strictPort"
 },
   "dependencies": {
     "react-dom": "^19.1.0",
