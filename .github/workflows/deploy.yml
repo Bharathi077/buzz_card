@@ -1,0 +1,27 @@
+name: Auto Deploy to GCP
+
+on:
+  push:
+    branches:
+      - main  # Or your working branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Deploy via SSH
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.GCP_HOST }}
+        username: ${{ secrets.GCP_USER }}
+        key: ${{ secrets.GCP_SSH_KEY }}
+        script: |
+          cd buzz_card
+          git pull origin main
+          npm install
+          npm run build
+          sudo systemctl restart nginx
