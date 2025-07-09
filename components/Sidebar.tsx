@@ -25,7 +25,7 @@ const Sidebar = () => {
       <div className="flex items-center justify-center h-28 border-b border-white/10">
         <div className="flex flex-col items-center gap-1">
           <img src={logo} alt="Logo" className="w-12 h-12 rounded-full" /> {/* ✅ logo image */}
-          <span className="text-xl font-bold text-white">SmartiCard</span>
+          <span className="text-xl font-bold text-white">buziness</span>
         </div>
       </div>
       <div className="flex-1 flex flex-col">
